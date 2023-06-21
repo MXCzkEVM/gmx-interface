@@ -136,13 +136,22 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       imageUrl: "https://assets.coingecko.com/coins/images/7598/thumb/wrapped_bitcoin_wbtc.png?1548822744",
     },
     {
-      name: "Ethereum",
-      symbol: "ETH",
+      name: "MXC",
+      symbol: "MXC",
       decimals: 18,
       address: ethers.constants.AddressZero,
       isNative: true,
       isShortable: true,
-      imageUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+      imageUrl: "https://assets.coingecko.com/coins/images/4604/small/mxc.png?1655534336",
+    },
+    {
+      name: "XSD",
+      symbol: "XSD",
+      decimals: 18,
+      address: "0xB9506A80429Ee619C74D46a3276c622358795e2B",
+    
+      isShortable: true,
+      imageUrl: "https://assets.coingecko.com/coins/images/4604/small/mxc.png?1655534336",
     },
     // https://github.com/OffchainLabs/arbitrum/blob/950c2f91b2e951cd3764394e0a73eac3797aecf3/packages/arb-ts/src/lib/networks.ts#L65
     {
@@ -159,6 +168,14 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       symbol: "USDC",
       decimals: 6,
       address: "0xf0DCd4737A20ED33481A49De94C599944a3Ca737",
+      isStable: true,
+      imageUrl: "https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389",
+    },
+    {
+      name: "GMX",
+      symbol: "GMX",
+      decimals: 18,
+      address: "0xA1f7C12F5CEb2B195ffDcd2318e68f3D5bFbEa53",
       isStable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389",
     },

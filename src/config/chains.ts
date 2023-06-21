@@ -19,10 +19,11 @@ export const FEES_HIGH_BPS = 50;
 export const DEFAULT_CHAIN_ID = ARBITRUM;
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [ARBITRUM, AVALANCHE];
+export const SUPPORTED_CHAIN_IDS:number[] = [];
+// export const SUPPORTED_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 if (isDevelopment()) {
-  SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET, AVALANCHE_FUJI);
+  SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
 }
 
 export const IS_NETWORK_DISABLED = {
@@ -75,6 +76,7 @@ const constants = {
     defaultCollateralSymbol: "USDC",
     defaultFlagOrdersEnabled: false,
     positionReaderPropsLength: 9,
+    wrappedTokenSymbol: "WMXC",
     v2: true,
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
