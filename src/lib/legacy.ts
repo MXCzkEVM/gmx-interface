@@ -380,6 +380,7 @@ export function getNextFromAmount(
   forSwap
 ) {
   const defaultValue = { amount: bigNumberify(0) };
+  // alert(`toAmount - ${toAmount} -fromTokenAddress ${fromTokenAddress} -toTokenAddress ${toTokenAddress} -infoTOkens ${JSON.stringify(infoTokens,null ,2 )}` )
 
   if (!toAmount || !fromTokenAddress || !toTokenAddress || !infoTokens) {
     return defaultValue;
@@ -414,6 +415,7 @@ export function getNextFromAmount(
     toTokenMaxPrice = forSwap ? toToken.contractMaxPrice : toToken.maxPrice;
   }
 
+  // alert(`fromToken-${JSON.stringify(fromToken,null,2)} -->toToken-${JSON.stringify(toToken,null,2)}, forSwap-->${forSwap}`)
   if (!fromToken || !fromTokenMinPrice || !toToken || !toTokenMaxPrice) {
     return defaultValue;
   }

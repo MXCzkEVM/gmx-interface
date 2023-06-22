@@ -158,7 +158,7 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       name: "Wrapped Ethereum",
       symbol: "WETH",
       decimals: 18,
-      address: "0xB47e6A5f8b33b3F17603C83a0535A9dcD7E32681",
+      address: "0x64630e9931B89003065826FF19214e9a5Eca8548",
       isWrapped: true,
       baseSymbol: "ETH",
       imageUrl: "https://assets.coingecko.com/coins/images/2518/thumb/weth.png?1628852295",
@@ -179,14 +179,14 @@ export const TOKENS: { [chainId: number]: Token[] } = {
       isStable: true,
       imageUrl: "https://assets.coingecko.com/coins/images/6319/thumb/USD_Coin_icon.png?1547042389",
     },
-    {
-      name: "Tether",
-      symbol: "USDT",
-      decimals: 6,
-      address: "0x818ED84bA1927945b631016e0d402Db50cE8865f",
-      isStable: true,
-      imageUrl: "https://assets.coingecko.com/coins/images/325/small/Tether-logo.png",
-    },
+    // {
+    //   name: "Tether",
+    //   symbol: "USDT",
+    //   decimals: 6,
+    //   address: "0x818ED84bA1927945b631016e0d402Db50cE8865f",
+    //   isStable: true,
+    //   imageUrl: "https://assets.coingecko.com/coins/images/325/small/Tether-logo.png",
+    // },
   ],
   [ARBITRUM]: [
     {

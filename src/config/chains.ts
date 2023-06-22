@@ -16,7 +16,7 @@ export const ARBITRUM_TESTNET = 5167003;
 export const FEES_HIGH_BPS = 50;
 
 // TODO take it from web3
-export const DEFAULT_CHAIN_ID = ARBITRUM;
+export const DEFAULT_CHAIN_ID = ARBITRUM_TESTNET
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
 export const SUPPORTED_CHAIN_IDS:number[] = [];
