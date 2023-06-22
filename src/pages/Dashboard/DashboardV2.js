@@ -191,7 +191,7 @@ export default function DashboardV2() {
   const { data: feesSummaryByChain } = useFeesSummary();
   const feesSummary = feesSummaryByChain[chainId];
 
-  const eth = infoTokens[getTokenBySymbol(chainId, "ETH").address];
+  const eth = infoTokens[getTokenBySymbol(chainId, "MXC").address];
   const shouldIncludeCurrrentFees =
     feesSummaryByChain[chainId]?.lastUpdatedAt &&
     parseInt(Date.now() / 1000) - feesSummaryByChain[chainId]?.lastUpdatedAt > 60 * 60;
@@ -344,7 +344,7 @@ export default function DashboardV2() {
                     <br />
                     Get lower fees to{" "}
                     <Link to="/trade" target="_blank" rel="noopener noreferrer">
-                      swap
+                    useInfoTokens   swap
                     </Link>{" "}
                     tokens for {tokenInfo.symbol}.
                   </Trans>

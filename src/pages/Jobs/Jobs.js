@@ -52,7 +52,7 @@ function NoJob() {
 //   <div className="body-para">
 //     <p className="subheading">What you will do:</p>
 //     <ul>
-//       <li>Work closely with the GMX team on the GMX front-end website.</li>
+//       <li>WouseAllOrdersStatsrk closely with the GMX team on the GMX front-end website.</li>
 //       <li>Collaborate and discuss features to be worked on.</li>
 //       <li>Remote full-time position, flexible working hours.</li>
 //     </ul>

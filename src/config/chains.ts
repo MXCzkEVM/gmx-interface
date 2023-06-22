@@ -6,22 +6,24 @@ import { isDevelopment } from "./env";
 const { parseEther } = ethers.utils;
 
 export const MAINNET = 56;
-export const TESTNET = 97;
+export const TESTNET = 5167004;
 export const ETH_MAINNET = 1;
 export const AVALANCHE = 43114;
 export const AVALANCHE_FUJI = 43113;
 export const ARBITRUM = 42161;
-export const ARBITRUM_TESTNET = 421611;
+export const ARBITRUM_TESTNET = 5167003;
+// export const ARBITRUM_TESTNET = 421611;
 export const FEES_HIGH_BPS = 50;
 
 // TODO take it from web3
-export const DEFAULT_CHAIN_ID = ARBITRUM;
+export const DEFAULT_CHAIN_ID = ARBITRUM_TESTNET
 export const CHAIN_ID = DEFAULT_CHAIN_ID;
 
-export const SUPPORTED_CHAIN_IDS = [ARBITRUM, AVALANCHE];
+export const SUPPORTED_CHAIN_IDS:number[] = [];
+// export const SUPPORTED_CHAIN_IDS = [ARBITRUM, AVALANCHE];
 
 if (isDevelopment()) {
-  SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET, AVALANCHE_FUJI);
+  SUPPORTED_CHAIN_IDS.push(ARBITRUM_TESTNET);
 }
 
 export const IS_NETWORK_DISABLED = {
@@ -31,8 +33,8 @@ export const IS_NETWORK_DISABLED = {
 
 export const CHAIN_NAMES_MAP = {
   [MAINNET]: "BSC",
-  [TESTNET]: "BSC Testnet",
-  [ARBITRUM_TESTNET]: "ArbRinkeby",
+  [TESTNET]: "MXC Wannsee zkEVM",
+  [ARBITRUM_TESTNET]: "MXC Wannsee zkEVM",
   [ARBITRUM]: "Arbitrum",
   [AVALANCHE]: "Avalanche",
   [AVALANCHE_FUJI]: "Avalanche Fuji",
@@ -62,20 +64,20 @@ const constants = {
   },
 
   [TESTNET]: {
-    nativeTokenSymbol: "BNB",
-    defaultCollateralSymbol: "BUSD",
+    nativeTokenSymbol: "MXC",
+    defaultCollateralSymbol: "MXC",
     defaultFlagOrdersEnabled: true,
     positionReaderPropsLength: 8,
     v2: false,
   },
 
   [ARBITRUM_TESTNET]: {
-    nativeTokenSymbol: "ETH",
+    nativeTokenSymbol: "MXC",
     defaultCollateralSymbol: "USDC",
     defaultFlagOrdersEnabled: false,
     positionReaderPropsLength: 9,
+    wrappedTokenSymbol: "WMXC",
     v2: true,
-
     SWAP_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     INCREASE_ORDER_EXECUTION_GAS_FEE: parseEther("0.0003"),
     // contract requires that execution fee be strictly greater than instead of gte
@@ -144,9 +146,10 @@ export const RPC_PROVIDERS = {
     "https://bsc-dataseed3.binance.org",
     "https://bsc-dataseed4.binance.org",
   ],
-  [TESTNET]: ["https://data-seed-prebsc-1-s1.binance.org:8545/"],
+  [TESTNET]: ["https://wannsee-rpc.mxc.com"],
   [ARBITRUM]: [getDefaultArbitrumRpcUrl()],
-  [ARBITRUM_TESTNET]: ["https://rinkeby.arbitrum.io/rpc"],
+  // [ARBITRUM_TESTNET]: ["https://rinkeby.arbitrum.io/rpc"],
+  [ARBITRUM_TESTNET]: ["https://wannsee-rpc.mxc.com"],
   [AVALANCHE]: ["https://api.avax.network/ext/bc/C/rpc"],
   [AVALANCHE_FUJI]: ["https://api.avax-test.network/ext/bc/C/rpc"],
 };
@@ -170,10 +173,10 @@ export const NETWORK_METADATA: { [chainId: number]: NetworkMetadata } = {
   },
   [TESTNET]: {
     chainId: "0x" + TESTNET.toString(16),
-    chainName: "BSC Testnet",
+    chainName: "MXC Wannsee zkEVM",
     nativeCurrency: {
-      name: "BNB",
-      symbol: "BNB",
+      name: "MXC",
+      symbol: "MXC",
       decimals: 18,
     },
     rpcUrls: RPC_PROVIDERS[TESTNET],
@@ -183,8 +186,8 @@ export const NETWORK_METADATA: { [chainId: number]: NetworkMetadata } = {
     chainId: "0x" + ARBITRUM_TESTNET.toString(16),
     chainName: "Arbitrum Testnet",
     nativeCurrency: {
-      name: "ETH",
-      symbol: "ETH",
+      name: "MXC",
+      symbol: "MXC",
       decimals: 18,
     },
     rpcUrls: RPC_PROVIDERS[ARBITRUM_TESTNET],
@@ -226,6 +229,7 @@ export const NETWORK_METADATA: { [chainId: number]: NetworkMetadata } = {
 };
 
 export const getConstant = (chainId: number, key: string) => {
+
   if (!constants[chainId]) {
     throw new Error(`Unsupported chainId ${chainId}`);
   }
@@ -277,7 +281,8 @@ export function getExplorerUrl(chainId) {
   } else if (chainId === TESTNET) {
     return "https://testnet.bscscan.com/";
   } else if (chainId === ARBITRUM_TESTNET) {
-    return "https://testnet.arbiscan.io/";
+    // return "https://testnet.arbiscan.io/";
+    return "https://wannsee-explorer.mxc.com/"
   } else if (chainId === ARBITRUM) {
     return "https://arbiscan.io/";
   } else if (chainId === AVALANCHE) {

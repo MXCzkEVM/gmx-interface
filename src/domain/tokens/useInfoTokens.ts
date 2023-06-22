@@ -48,6 +48,7 @@ export function useInfoTokens(
   );
 
   const indexPricesUrl = getServerUrl(chainId, "/prices");
+  
 
   const { data: indexPrices } = useSWR([indexPricesUrl], {
     // @ts-ignore spread args incorrect type
@@ -55,6 +56,7 @@ export function useInfoTokens(
     refreshInterval: 500,
     refreshWhenHidden: true,
   });
+
 
   return {
     infoTokens: getInfoTokens(
@@ -103,7 +105,7 @@ function getInfoTokens(
 
   for (let i = 0; i < whitelistedTokens.length; i++) {
     const token = JSON.parse(JSON.stringify(whitelistedTokens[i])) as TokenInfo;
-
+   
     if (vaultTokenInfo) {
       token.poolAmount = vaultTokenInfo[i * vaultPropsLength];
       token.reservedAmount = vaultTokenInfo[i * vaultPropsLength + 1];
