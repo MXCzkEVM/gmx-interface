@@ -48,6 +48,7 @@ import "styles/Input.css";
 import metamaskImg from "img/metamask.png";
 import coinbaseImg from "img/coinbaseWallet.png";
 import walletConnectImg from "img/walletconnect-circle-blue.svg";
+import axsImg from "img/axs.svg";
 import useEventToast from "components/EventToast/useEventToast";
 import EventToastContainer from "components/EventToast/EventToastContainer";
 import SEO from "components/Common/SEO";
@@ -582,6 +583,12 @@ function FullApp() {
         setIsVisible={setWalletModalVisible}
         label={t`Connect Wallet`}
       >
+        <button className="Wallet-btn MetaMask-btn" onClick={activateMetaMask}>
+          <img src={axsImg} alt="AXS wallet" />
+          <div>
+            <Trans>AXS Wallet</Trans>
+          </div>
+        </button>
         <button className="Wallet-btn MetaMask-btn" onClick={activateMetaMask}>
           <img src={metamaskImg} alt="MetaMask" />
           <div>
